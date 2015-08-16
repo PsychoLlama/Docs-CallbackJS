@@ -14,6 +14,7 @@
         <p>
           Callbacks with super powers
         </p>
+        <a href='' class="btn btn-primary">Documentation</a>
       </div>
     </div>
     <div class="container">
@@ -30,12 +31,14 @@
             <div class="col-md-4">
               <h3>Cancellations</h3>
               <p>
-                You can cancel and renew callbacks immediately,
-                or by some event. To keep a callback from
-                executing, cancel it.
+                You might want to cancel your callback after
+                some point. The way this library handles that
+                is by <em>cancelling</em>. Once a callback
+                has been cancelled, you can enable it again by
+                renewing. Each action can be event driven,
+                allowing you to write powerful, succinct
+                callback declarations.
               </p>
-              <pre>new Callback(function)
-    .cancel(cancelButton, "click")</pre>
             </div>
             <div class="col-md-4">
               <h3>Decisions</h3>
@@ -47,10 +50,6 @@
                 If it returns falsey, your callback
                 <em>won't</em> be invoked.
               </p>
-              <pre>new Callback(function)
-    .if(function(arg) {
-      return this.fired.length &lt; 3;
-    })</pre>
             </div>
             <div class="col-md-4">
               <h3>Custom Events</h3>
@@ -64,8 +63,6 @@
                 This library gives you simple tools for
                 declaring and firing your own custom events.
               </p>
-              <pre>new Callback(function)
-    .when("thing happens")</pre>
             </div>
           </div><!-- columns -->
           <div class="col-xs-12 col-md-2">
@@ -103,5 +100,15 @@
       </div>
         
     </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">
+          <a href="https://github.com/PsychoLlama/CallbackJS"
+          style='color: inherit'>
+            Fork this project on GitHub
+          </a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
