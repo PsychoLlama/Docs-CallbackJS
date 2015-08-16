@@ -17,53 +17,87 @@
       </div>
     </div>
     <div class="container">
-      <h2>What it does for you</h2>
-      <p class="lead">
-        CallbackJS empowers your event-driven functions,
-        giving you simplified decisions, error handling,
-        event binding, load promises, cancellations, and
-        <em>custom</em> event listeners.
-      </p>
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Cancellations</h3>
-          <p>
-            You can cancel and renew callbacks immediately,
-            or by some event. To keep a callback from
-            executing, cancel it.
-          </p>
-          <pre>new Callback(function)
-.cancel(cancelButton, "click")</pre>
+      <div class="col-xs-12 col-md-10">
+        <h2>What it does for you</h2>
+        <p class="lead">
+          CallbackJS empowers your event-driven functions,
+          giving you simplified decisions, error handling,
+          event binding, load promises, cancellations, and
+          <em>custom</em> event listeners.
+        </p>
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Cancellations</h3>
+            <p>
+              You can cancel and renew callbacks immediately,
+              or by some event. To keep a callback from
+              executing, cancel it.
+            </p>
+            <pre>new Callback(function)
+  .cancel(cancelButton, "click")</pre>
+          </div>
+          <div class="col-md-4">
+            <h3>Decisions</h3>
+            <p>
+              If you find yourself checking application
+              state inside your callback, there's a better
+              way. CallbackJS lets you set a conditional
+              function, one that is run before your callback.
+              If it returns falsey, your callback
+              <em>won't</em> be invoked.
+            </p>
+            <pre>new Callback(function)
+  .if(function(arg) {
+    return this.fired.length &lt; 3;
+  })</pre>
+          </div>
+          <div class="col-md-4">
+            <h3>Custom Events</h3>
+            <p>
+              This is the reason CallbackJS was designed.
+              Although JavaScript is event oriented,
+              defining your own can be a painful experience,
+              and they only apply to HTML elements.
+            </p>
+            <p>
+              This library gives you simple tools for
+              declaring and firing your own custom events.
+            </p>
+            <pre>new Callback(function)
+  .when("thing happens")</pre>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h3>Decisions</h3>
-          <p>
-            If you find yourself checking application
-            state inside your callback, there's a better
-            way. CallbackJS lets you set a conditional
-            function, one that is run before your callback.
-            If it returns falsey, your callback
-            <em>won't</em> be invoked.
-          </p>
-          <pre>new Callback(function)
-.if(function(arg) {
-  return this.fired.length &lt; 3;
-})</pre>
-        </div>
-        <div class="col-md-4">
-          <h3>Custom Events</h3>
-          <p>
-            This is the reason CallbackJS was designed.
-            Although JavaScript is event oriented,
-            defining your own can be a painful experience,
-            and they only apply to HTML elements.
-          </p>
-          <p>
-            This library gives you simple tools for
-            declaring and firing your own custom events.
-          </p>
-          <pre>new Callback(function)
-.when("thing happens")</pre>
+      </div>
+        
+      <div class="col-xs-12 col-md-2">
+        <div class="list-group">
+          <a class="list-group-item active">
+            API documentation
+          </a>
+          <a class="list-group-item">
+            Callback
+          </a>
+          <a class="list-group-item">
+            when
+          </a>
+          <a class="list-group-item">
+            config
+          </a>
+          <a class="list-group-item">
+            cancel
+          </a>
+          <a class="list-group-item">
+            renew
+          </a>
+          <a class="list-group-item">
+            catch
+          </a>
+          <a class="list-group-item">
+            if
+          </a>
+          <a class="list-group-item">
+            invoke
+          </a>
         </div>
       </div>
     </div>
