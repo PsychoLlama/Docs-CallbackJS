@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Callback API - CallbackJS</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width; initial-scale=1'>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Cancel</h1>
+        <p class="lead">
+          Removing a callback
+        </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <h2>Immediate</h2>
+      <p>
+        To prevent a callback from firing, you can call
+        <code>.cancel()</code> on it. This allows you to
+        attach your function to events without invoking it.
+      </p>
+      <pre>new Callback()
+.when( input, 'change' )
+.cancel()</pre>
+      <p>
+        The callback in the example will not fire until a
+        <a href="renew.html"><code>renew</code></a> method
+        is called on it.
+      </p>
+      
+      <h2>Event driven</h2>
+      <p>
+        <code>.cancel()</code> takes arguments. In fact, under
+        the hood, cancel uses
+        <a href="when.html"><code>.when</code></a> and can take
+        any event that <a href="when.html"><code>.when</code></a> can.
+        This becomes very powerful when you need to describe a
+        callback that expires. Here's an example:
+      </p>
+      <pre>new Callback( function )
+.when( button, "click" )
+.cancel( request, "load" )
+.cancel( 5000 )</pre>
+      <p>
+        This callback invokes when a button is clicked,
+        but the event expires either when your request loads or
+        in five seconds, whichever happens first.
+      </p>
+    </div>
+  </body>
+</html>
