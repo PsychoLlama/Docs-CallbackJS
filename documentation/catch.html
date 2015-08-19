@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>CallbackJS - Docs</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width; initial-scale=1'>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Catch</h1>
+        <p class="lead">
+          Callback error handling
+        </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <p>
+        Supposing your callback throws an error, CallbackJS checks for
+        a handler. You can set your handler by calling <code>catch</code>
+        and passing in your function. It will be given the error object.
+      </p>
+      <pre>new Callback( function() {
+  // fail miserably
+})
+.catch( function(error) {
+  // try something else
+})</pre>
+      <p>
+        If no handler is found, your error will be thrown.
+      </p>
+    </div>
+  </body>
+</html>
