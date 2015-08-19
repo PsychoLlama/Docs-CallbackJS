@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>CallbackJS - Docs</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width; initial-scale=1'>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Renew</h1>
+        <p class="lead">
+          Expired callback renewal
+        </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <blockquote>
+        This method does nothing if the callback has not
+        expired or cancelled
+      </blockquote>
+      
+      <h2>Immediate</h2>
+      <p>
+        Call <code>renew</code> without arguments to
+        immediately mark a callback as invokable (this is the default state
+        of all callbacks). This will have no
+        effect on future callback expirations, and can be used as
+        many times as needed.
+      </p>
+      <pre>new Callback()
+.renew()</pre>
+      
+      <h2>Event driven</h2>
+      <p>
+        Similar to <a href="cancel.html"><code>cancel</code></a>,
+        <code>renew</code> uses <code>when</code> under the hood, allowing
+        you to use every event tool <code>when</code> supports.
+        As soon as your event fires, your expired callback is renewed
+        for execution.
+      </p>
+      <pre>new Callback( function )
+.when( product, 'click' )
+.cancel()
+.renew( request, 'load' )</pre>
+      <p>
+        The above example creates a new callback, binds it to click events on
+        the product, and prevents the callback from running until the
+        request has come in successfully.
+      </p>
+    </div>
+  </body>
+</html>
