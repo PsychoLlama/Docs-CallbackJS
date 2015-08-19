@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CallbackJS - Docs</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <meta name='viewport' content='width=device-width; initial-scale=1'>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Config</h1>
+        <p class="lead">
+          Behavior customization
+        </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <p>
+        <code>config</code> lets you change advanced details on how your
+        function is invoked. Generally you won't need it, but it's there
+        if you do. It takes an object of configuration variables as
+        an argument.
+      </p>
+      
+      <h2>Arguments</h2>
+      <p>
+        By default, the event object is passed to your callback. If you
+        want to override this, you can do that in the configuration object...
+      </p>
+      <pre>new Callback()
+.config({
+  // one argument
+  pass: argVar
+  
+  // multiple arguments
+  pass: [arg1, arg2...]
+})</pre>
+      
+      <h2>"this"</h2>
+      <p>
+        You can know for sure what the value of <code>this</code> is by
+        setting it in the <code>config</code> object. Here's an example:
+      </p>
+      <pre>new Callback()
+.config({
+  // remember to wrap "this" in quotes
+  "this": friendlyPotato
+})</pre>
+      <p>
+        In the example above, when your callback is invoked, <code>this</code>
+        will be equal to <code>friendlyPotato</code>.
+      </p>
+      <p>
+        Although this feature is handy, I recommend only using it for
+        troubleshooting. Others may make assumptions as to the value of
+        <code>this</code> when reading your code.
+      </p>
+      
+      <h2>Others</h2>
+      <p>
+        The other configuration variables have methods of their own,
+        and to preserve the semantics and explicitness of your code,
+        I recommend using them.
+        That said, if you feel the <code>config</code> method is more readable,
+        have at it. Here are the properties available to you:
+      </p>
+      <h3>cancelled</h3>
+      <p>
+        Whether or not to execute this callback when it is invoked.
+        Setting this value as <code>true</code> is
+        similar to calling the <a href="cancel.html"><code>cancel</code></a>
+        method.
+      </p>
+      <pre>config({
+  cancelled: boolean
+})</pre>
+      <h3>conditional</h3>
+      <p>
+        Assign a function to run before the callback is invoked, deciding
+        whether or not it should be. Essentially the same as the
+        <a href="if.html"><code>if</code></a> method.
+      </p>
+      <pre>config({
+  conditional: function
+})</pre>
+      <h3>error</h3>
+      <p>
+        Give it a function to call if your callback throws an error.
+        Does the same thing as the
+        <a href="catch.html"><code>catch</code></a> method.
+      </p>
+      <pre>config({
+  error: handler
+})</pre>
+    </div>
+  </body>
+</html>
