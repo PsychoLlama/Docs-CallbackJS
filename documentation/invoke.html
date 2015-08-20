@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CallbackJS - Docs</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width; initial-scale=1'>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>invoke</h1>
+        <p class="lead">
+          Smart callback execution
+        </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <p>
+        This is how all callbacks are invoked in CallbackJS. the
+        <code>invoke</code> method runs the conditional tests, checks
+        the configuration details, pushes the fire timestamps and manages
+        the error events. If you need to call your callback immediately
+        (and intelligently), <code>invoke</code> is what you're looking for.
+      </p>
+      <pre>new Callback()
+.when('your event')
+.invoke()</pre>
+      <p>
+        <span class="label label-info">Tip:</span>
+        Splat parameters are supported when using <code>invoke</code>.
+      </p>
+    </div>
+  </body>
+</html>
