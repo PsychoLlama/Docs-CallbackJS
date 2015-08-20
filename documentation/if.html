@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>CallbackJS - Docs</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name='viewport' content='width=device-width; initial-scale=1'>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>If</h1>
+        <p class="lead">
+          Callback decisions
+        </p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <p>
+        Say your callback should only be invoked if a condition is met.
+        Instead of cluttering your callback with tests, you can use
+        <code>if</code> to separate the logic. <code>if</code> takes a
+        function to execute before your callback is invoked,
+        and if it returns a falsey value, your callback won't run.
+      </p>
+      <pre>new Callback( function )
+.if( function(user) {
+  var isObj, hasPass;
+  
+  isObj = typeof user === 'object'
+  hasPass = typeof user.password === 'string'
+  
+  return isObj && hasPass
+})
+</pre>
+      <p>
+        The example above checks the validity of <code>user</code>,
+        returning true if the conditions are met. This keeps the testing
+        logic separate from the callback logic, allowing your code to
+        stay clean and tidy.
+      </p>
+    </div>
+  </body>
+</html>
